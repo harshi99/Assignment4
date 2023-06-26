@@ -10,12 +10,13 @@ from azure.identity import DefaultAzureCredential
 import matplotlib.pyplot as plt
 import pyodbc
 import io
+import os
 import base64
 
 # Blob Storage configuration
 blob_connection_string = 'DefaultEndpointsProtocol=https;AccountName=assdata1;AccountKey=WMGVFc5Btn/cWP1ErRdsoFKp+VOWcfM9r5C6uOYSod9jeunIxoThQp+A6ecG6R48CFywsaCRl/AZ+ASttwd/CA==;EndpointSuffix=core.windows.net'
 blob_service_client = BlobServiceClient.from_connection_string(blob_connection_string)
-container_name = 'as'
+container_name = 'assingment2'
 
 # SQL configuration
 server = 'harshi1.database.windows.net'
@@ -82,4 +83,3 @@ if __name__ == '__main__':
     port = os.environ.get('PORT', 5000)
     app.run(debug=True)
     app.run(host='localhost', port=port)
-    
