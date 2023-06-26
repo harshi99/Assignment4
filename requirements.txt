@@ -1,4 +1,3 @@
 flask
 matplotlib
 pyodbc
-base64
