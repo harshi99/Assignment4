@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chart Visualization</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+    
+        h1 {
+            text-align: center;
+        }
+    
+        form {
+            display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 20px;
+        }
+        
+    
+        label {
+            font-weight: bold;
+        }
+    
+        textarea {
+            
+            width: 25%;
+            height: 200px;
+        }
+    
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    
+        button:hover {
+            background-color: #45a049;
+        }
+    
+        h2 {
+            text-align: center;
+            margin-top: 40px;
+        }
+    
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>Chart Visualization</h1>
+
+    <form method="POST">
+        <label for="query">Enter your query:</label><br>
+        <textarea id="query" name="query" rows="4" cols="50"></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if chart_type == 'pie' %}
+    <h2>Pie Chart</h2>
+    <img src="data:image/png;base64,{{ chart_url }}" alt="Pie Chart">
+
+    {% elif chart_type == 'bar' %}
+    <h2>Bar Graph</h2>
+    <img src="data:image/png;base64,{{ chart_url }}" alt="Bar Graph">
+
+    {% endif %}
+</body>
+</html>
